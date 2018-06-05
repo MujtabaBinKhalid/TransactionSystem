@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lifeline.fyp.bankingsystem.activities.Home">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:id="@+id/homelayout">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="logout"
+            android:id="@+id/logout"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logout"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="4dp"
+            android:id="@+id/name"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/createuser"
+            android:src="@drawable/addicon"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="240dp"
+            app:backgroundTint="@color/white" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerview"
+            android:background="#d3d3d3"
+            android:layout_below="@+id/createuser">
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/formlayout"
+        android:visibility="invisible"
+        >
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/creatingusername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username1"
+            android:layout_marginTop="100dp"
+            android:inputType="textCapWords"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="50dp"
+            app:met_floatingLabelText="@string/usernamelabel"
+            app:met_floatingLabel="highlight"
+            app:met_baseColor="@color/black"
+            app:met_primaryColor="@color/skyBlue"
+            app:met_errorColor="@color/red"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/creatingphonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/number1"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="50dp"
+            app:met_floatingLabelText="@string/numberlabel"
+            app:met_floatingLabel="highlight"
+            app:met_baseColor="@color/black"
+            android:inputType="number"
+            app:met_primaryColor="@color/skyBlue"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/creatingcnic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cnic"
+            android:layout_marginTop="260dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:inputType="number"
+            android:layout_marginBottom="50dp"
+            app:met_floatingLabelText="@string/cniclabel"
+            app:met_floatingLabel="highlight"
+            app:met_baseColor="@color/black"
+            app:met_primaryColor="@color/skyBlue"
+            app:met_errorColor="@color/red"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/createaccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/createUser"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="330dp"
+            android:layout_marginLeft="58dp"
+            android:layout_marginRight="58dp"
+            android:layout_marginBottom="50dp"
+            app:backgroundTint="@color/skyBlue"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/allinfo"
+        android:visibility="invisible">
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

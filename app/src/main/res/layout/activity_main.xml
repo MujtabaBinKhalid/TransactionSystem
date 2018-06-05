@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.lifeline.fyp.bankingsystem.activities.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:id="@+id/homepage">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="320dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/logo"/>
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/loginButton"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginBottom="50dp"
+            app:backgroundTint="@color/skyBlue"
+            />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signUp"
+
+            android:textColor="@color/skyBlue"
+            android:layout_marginTop="375dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/buttonborder"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:id="@+id/loginpage">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="420dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/logo"/>
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:layout_marginTop="200dp"
+            android:inputType="textCapWords"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="50dp"
+            app:met_floatingLabelText="@string/usernamelabel"
+            app:met_floatingLabel="highlight"
+            app:met_baseColor="@color/black"
+            app:met_primaryColor="@color/skyBlue"
+            app:met_errorColor="@color/red"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:layout_marginTop="270dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="50dp"
+            android:inputType="textPassword"
+            app:met_floatingLabelText="@string/passwordlabel"
+            app:met_floatingLabel="highlight"
+            app:met_baseColor="@color/black"
+            app:met_primaryColor="@color/skyBlue"
+            app:met_errorColor="@color/red"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/actuallogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/loginButton"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="340dp"
+            android:layout_marginLeft="58dp"
+            android:layout_marginRight="58dp"
+            android:layout_marginBottom="50dp"
+            app:backgroundTint="@color/skyBlue"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password ?"
+            android:id="@+id/forgotpasswordtext"
+            android:textColor="@color/skyBlue"
+            android:textStyle="bold"
+            android:layout_below="@+id/actuallogin"
+            android:layout_marginTop="-30dp"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/signuppage"
+        android:visibility="invisible"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/creatingusername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:layout_marginTop="180dp"
+            android:inputType="textCapWords"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="50dp"
+            app:met_floatingLabelText="@string/usernamelabel"
+            app:met_floatingLabel="highlight"
+            app:met_baseColor="@color/black"
+            app:met_primaryColor="@color/skyBlue"
+            app:met_errorColor="@color/red"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/creatingpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:layout_marginTop="260dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="50dp"
+            app:met_floatingLabelText="@string/passwordlabel"
+            app:met_floatingLabel="highlight"
+            app:met_baseColor="@color/black"
+            android:inputType="textPassword"
+            app:met_primaryColor="@color/skyBlue"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/creatingphonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/number"
+            android:layout_marginTop="340dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:inputType="number"
+            android:layout_marginBottom="50dp"
+            app:met_floatingLabelText="@string/numberlabel"
+            app:met_floatingLabel="highlight"
+            app:met_baseColor="@color/black"
+            app:met_primaryColor="@color/skyBlue"
+            app:met_errorColor="@color/red"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/createaccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/createAccount"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="410dp"
+            android:layout_marginLeft="58dp"
+            android:layout_marginRight="58dp"
+            android:layout_marginBottom="20dp"
+            app:backgroundTint="@color/skyBlue"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:id="@+id/forgotpassword">
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/usernamechecking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:layout_marginTop="270dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="50dp"
+            android:layout_centerInParent="true"
+            app:met_floatingLabelText="@string/usernamelabel"
+            app:met_floatingLabel="highlight"
+            app:met_baseColor="@color/black"
+            android:inputType="textPersonName|textCapWords"
+            app:met_primaryColor="@color/skyBlue"
+            app:met_errorColor="@color/red"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/reenterpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:visibility="invisible"
+            android:layout_marginTop="270dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="50dp"
+            android:inputType="textPassword"
+            android:layout_centerInParent="true"
+            app:met_floatingLabelText="@string/passwordlabel"
+            app:met_floatingLabel="highlight"
+            app:met_baseColor="@color/black"
+            app:met_primaryColor="@color/skyBlue"
+            app:met_errorColor="@color/red"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/checkusername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/validate"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="340dp"
+            android:layout_marginLeft="58dp"
+            android:layout_marginRight="58dp"
+            android:layout_marginBottom="50dp"
+            app:backgroundTint="@color/skyBlue"
+            />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/changepassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/changepassword"
+            android:paddingTop="20dp"
+            android:visibility="invisible"
+            android:paddingBottom="20dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="340dp"
+            android:layout_marginLeft="58dp"
+            android:layout_marginRight="58dp"
+            android:layout_marginBottom="50dp"
+            app:backgroundTint="@color/skyBlue"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+    </RelativeLayout>

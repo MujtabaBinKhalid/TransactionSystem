@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selectstatus"
+        android:textStyle="bold"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="8dp"
+
+        />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/statusofamount"
+        android:orientation="horizontal"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="94dp"
+        >
+        <RadioButton
+            android:id="@+id/borrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/borrowed"
+           />
+
+        <RadioButton
+            android:id="@+id/lend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lend"/>
+
+
+    </RadioGroup>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/amount"
+        android:layout_marginTop="80dp"
+        android:inputType="number"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="50dp"
+        app:met_floatingLabelText="@string/amountlabel"
+        app:met_floatingLabel="highlight"
+        app:met_baseColor="@color/black"
+        app:met_primaryColor="@color/skyBlue"
+        app:met_errorColor="@color/red"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/descritpion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/description"
+        android:inputType="textMultiLine|textCapWords"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="50dp"
+        android:maxLines="2"
+        app:met_maxCharacters="20"
+        app:met_minCharacters="5"
+        app:met_floatingLabelText="@string/descriptionlabel"
+        app:met_floatingLabel="highlight"
+        app:met_baseColor="@color/black"
+
+        app:met_primaryColor="@color/skyBlue"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/date"
+        android:layout_marginTop="260dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:inputType="number"
+        android:layout_marginBottom="50dp"
+        app:met_floatingLabelText="@string/date"
+        app:met_floatingLabel="highlight"
+        app:met_baseColor="@color/black"
+        app:met_primaryColor="@color/skyBlue"
+        app:met_errorColor="@color/red"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/createAccount"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginRight="58dp"
+        android:layout_marginBottom="50dp"
+        app:backgroundTint="@color/skyBlue"
+        />
+
+
+
+</RelativeLayout>

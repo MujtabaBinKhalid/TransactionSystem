@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Balance System</string>
+    <string name="loginButton">Login</string>
+    <string name="signUp">SignUp</string>
+    <string name="createAccount">Create Account</string>
+    <string name="deleteUser">Remove</string>
+    <string name="createUser">Create User Account</string>
+    <string name="username">Enter your name</string>
+    <string name="username1">Enter  name</string>
+    <string name="usernamelabel">User name</string>
+    <string name="password">Enter your password</string>
+    <string name="number">Enter your mobile number</string>
+    <string name="number1">Enter  mobile number</string>
+    <string name="cnic">Enter  CNIC number</string>
+    <string name="passwordlabel">Password</string>
+    <string name="numberlabel">Cell Number</string>
+    <string name="cniclabel">CNIC</string>
+    <string name="borrowed">borrowed</string>
+    <string name="lend">lend</string>
+    <string name="nil">Null</string>
+    <string name="date">Date</string>
+    <string name="amount">Enter Amount</string>
+    <string name="amountlabel"> Amount</string>
+    <string name="description">Enter Description</string>
+    <string name="descriptionlabel">Description</string>
+    <string name="validate">Validate Username</string>
+    <string name="changepassword">Change password</string>
+    <string name="createtrans">Create Transaction</string>
+
+    <string name="name">User Name</string>
+    <string name="num">Mobile Number</string>
+    <string name="cnicnum">CNIC Number</string>
+    <string name="status">Current Status</string>
+    <string name="detail">Customer Detail</string>
+    <string name="amountnet">Net Amount</string>
+    <string name="des">Description</string>
+    <string name="datelast">Last Date</string>
+    <string name="selectstatus">Select status</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+</resources>

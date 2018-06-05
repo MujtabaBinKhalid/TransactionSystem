@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/allrecord"
+    android:padding="2dp"
+    android:layout_margin="3dp"
+
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="Value"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="18dp"
+        android:id="@+id/name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="18dp"
+        android:text="value"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:id="@+id/number"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:text="value"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="18dp"
+        android:id="@+id/status"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/deleteUser"
+        android:layout_marginLeft="215dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/skyBlue"
+        />
+
+</RelativeLayout>
