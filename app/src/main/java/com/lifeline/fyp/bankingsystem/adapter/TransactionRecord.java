@@ -44,12 +44,14 @@ public class TransactionRecord extends RecyclerView.Adapter<TransactionRecord.Tr
             holder.des.setText( "You borrow money from "+ transaction.getUsername()  );
             holder.amount.setText( transaction.getDescription() );
             holder.date.setText( transaction.getDate() );
+            holder.status.setText( transaction.getAmount() );
 
         }
         else if(transaction.getStatus().equals( "lend" )){
             holder.des.setText(  "You  lend money to "+ transaction.getUsername()  );
             holder.amount.setText( transaction.getDescription() );
             holder.date.setText( transaction.getDate() );
+            holder.status.setText( transaction.getAmount() );
         }
 
     }
@@ -61,12 +63,13 @@ public class TransactionRecord extends RecyclerView.Adapter<TransactionRecord.Tr
 
     public class TransactionDetail extends RecyclerView.ViewHolder {
 
-        TextView des,amount,date;
+        TextView des,amount,date,status;
         public TransactionDetail(View itemView) {
             super( itemView );
             des = (TextView) itemView.findViewById( R.id.des );
             amount = (TextView) itemView.findViewById( R.id.amount );
             date = (TextView) itemView.findViewById( R.id.date );
+            status = (TextView) itemView.findViewById( R.id.status );
 
         }
     }

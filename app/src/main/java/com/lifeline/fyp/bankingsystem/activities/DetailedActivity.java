@@ -96,15 +96,15 @@ public class DetailedActivity extends AppCompatActivity {
         database = new Database( this );
 
         seperator = database.specificMember( id ).split( ";" );
+        Log.d( "SPECIFICMEMBER",database.specificMember( id ) );
         personname.setText( seperator[0] );
         personnumber.setText( seperator[1] );
         personcnic.setText( seperator[2] );
         personstatus.setText( seperator[3] );
         ownername = sharedPreferences.getString("username", null);
-        Log.d( "ALLTRANSACTION ", String.valueOf( database.alltransaction( seperator[0], ownername).size() ) );
 
 
-        if(seperator[4].equals( "null" ) || seperator[5].equals( "null" )){
+        if(seperator[5].equals( "null" )){
             Log.d( "sdfsdfsd","sdfsdfsd" );
          create.setVisibility( View.INVISIBLE );
          create2.setVisibility( View.INVISIBLE );
@@ -118,6 +118,13 @@ public class DetailedActivity extends AppCompatActivity {
         }
         else{
             Log.d( "sdfsdfsd","sdfsdfsd22" );
+            persondetail.setVisibility( View.INVISIBLE );
+            persondate.setVisibility( View.INVISIBLE );
+            personamount.setVisibility( View.VISIBLE );
+            destext.setVisibility( View.INVISIBLE );
+            amounttext.setVisibility( View.VISIBLE );
+            datetext.setVisibility( View.INVISIBLE );
+
             persondetail.setText( seperator[4] );
             personamount.setText( seperator[5] );
             persondate.setText( seperator[6] );

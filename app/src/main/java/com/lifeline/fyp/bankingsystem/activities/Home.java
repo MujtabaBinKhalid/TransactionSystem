@@ -4,11 +4,16 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -19,21 +24,25 @@ import com.lifeline.fyp.bankingsystem.database.Database;
 import com.lifeline.fyp.bankingsystem.models.Member;
 import com.lifeline.fyp.bankingsystem.R;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     SharedPreferences sharedPreferences;
-    TextView name;
-    Button logout;
     FloatingActionButton createuser;
     Database database;
+    TextView norecord;
     RelativeLayout homelayout,formlayout;
     com.rengwuxian.materialedittext.MaterialEditText creatingusername, creatingcnic, creatingphonenumber;
     android.support.v7.widget.AppCompatButton createaccount;
     RecyclerView recyclerView;
     private RecyclerView.Adapter recycleradapter;
     ArrayList<Member> allrecords;
-
+    private DrawerLayout dlayout; // drawerlayout
+    private ActionBarDrawerToggle drawerToggle; //toggle button
+    private NavigationView mNavigationview;
+    TextView username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +52,6 @@ public class Home extends AppCompatActivity {
 
 
         recyclerView = (RecyclerView) findViewById( R.id. recyclerview);
-        logout = (Button) findViewById( R.id.logout );
-        name = (TextView) findViewById( R.id.name );
         createuser = (FloatingActionButton) findViewById( R.id.createuser );
         database = new Database( this );
         createuser.setOnClickListener( new View.OnClickListener() {
@@ -53,7 +60,7 @@ public class Home extends AppCompatActivity {
                 userform();
             }
         } );
-        name.setText( sharedPreferences.getString("username", null) );
+        norecord = (TextView) findViewById( R.id.norecord );
 
         homelayout = (RelativeLayout) findViewById( R.id.homelayout );
         formlayout = (RelativeLayout) findViewById( R.id.formlayout );
@@ -66,26 +73,33 @@ public class Home extends AppCompatActivity {
 
 
 
+        dlayout = (DrawerLayout) findViewById( R.id.drawer );
+        drawerToggle = new ActionBarDrawerToggle( this, dlayout, R.string.open, R.string.close );
+        dlayout.addDrawerListener( drawerToggle );
+        drawerToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled( true );
+        NavigationView navigationMenu = (NavigationView) findViewById( R.id.navmenu );
+        mNavigationview = (NavigationView) findViewById( R.id.navmenu );
+        mNavigationview.setNavigationItemSelectedListener( this );
+
+        View header = mNavigationview.getHeaderView( 0 );
+        username = (TextView) header.findViewById( R.id.activeusername );
+        username.setText( sharedPreferences.getString("username", null) );
+
+
+
         try{
+            recyclerView.setVisibility( View.VISIBLE );
+            norecord.setVisibility( View.INVISIBLE );
             userAllRecord();
 
-        }catch (Exception e){
 
+        }catch (Exception e){
+            norecord.setVisibility( View.VISIBLE );
+            recyclerView.setVisibility( View.INVISIBLE );
         }
 
 
-        logout.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                SharedPreferences.Editor e=sharedPreferences.edit();
-                e.clear();
-                e.commit();
-                finish();
-                startActivity( new Intent( getApplicationContext(),MainActivity.class ) );
-
-            }
-        } );
 
         createaccount.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -168,4 +182,30 @@ formlayout.setVisibility( View.VISIBLE );
      }
     }
 
+    public boolean onOptionsItemSelected(MenuItem menu) {
+
+        if (drawerToggle.onOptionsItemSelected( menu )) {
+            return true;
+        }
+        return super.onOptionsItemSelected( menu );
     }
+
+    // intializing the menu items of the navigation bar.
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.exitapp: {
+                SharedPreferences.Editor e = sharedPreferences.edit();
+                e.clear();
+                e.commit();
+                finish();
+                startActivity( new Intent( getApplicationContext(), MainActivity.class ) );
+                break;
+            }
+
+
+        }
+        return false;
+    }
+
+}

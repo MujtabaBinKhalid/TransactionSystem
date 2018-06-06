@@ -263,6 +263,16 @@ public class Database extends SQLiteOpenHelper {
                 +cursor.getString( cursor.getColumnIndex( COLUMN_STATUS ) );
     }
 
+    public String fetchingMobileNumber(String name){
+        Cursor cursor = getReadableDatabase().rawQuery(
+                "SELECT * FROM " + TABLE_USER + " WHERE "
+                        + COLUMN_USERNAME + "='" + name +"'" ,  null);
+        cursor.moveToFirst();
+
+        return  cursor.getString( cursor.getColumnIndex( COLUMN_MOBILENUMBER ) );
+
+    }
+
     public ArrayList<Transaction> alltransaction(String username, String ownername){
         alltransaction = new ArrayList<>();
         SQLiteDatabase db = getWritableDatabase();

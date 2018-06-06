@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -38,7 +39,7 @@ public class AllTransactions extends AppCompatActivity implements NavigationView
     private DrawerLayout dlayout; // drawerlayout
     private ActionBarDrawerToggle drawerToggle; //toggle button
     private NavigationView mNavigationview;
-
+TextView norecord;
     Integer id;
     Database database;
     String[] seperator;
@@ -46,6 +47,7 @@ public class AllTransactions extends AppCompatActivity implements NavigationView
     SimpleDateFormat df;
     String details;
     android.support.v7.widget.AppCompatButton create, btn;
+    FloatingActionButton button;
     Date dateobject;
     private AlertDialog.Builder builder;
     private Dialog dialog;
@@ -67,23 +69,25 @@ public class AllTransactions extends AppCompatActivity implements NavigationView
         setContentView( R.layout.activity_all_transactions );
         sharedPreferences = getSharedPreferences( "login", MODE_PRIVATE );
 
-
+norecord = (TextView) findViewById( R.id.norecord );
         dlayout = (DrawerLayout) findViewById( R.id.drawer );
         drawerToggle = new ActionBarDrawerToggle( this, dlayout, R.string.open, R.string.close );
         dlayout.addDrawerListener( drawerToggle );
         drawerToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled( true );
         NavigationView navigationMenu = (NavigationView) findViewById( R.id.navmenu );
         mNavigationview = (NavigationView) findViewById( R.id.navmenu );
         mNavigationview.setNavigationItemSelectedListener( this );
 
         dateobject = Calendar.getInstance().getTime();
         df = new SimpleDateFormat( "dd-MMM-yyyy" );
-        create = (android.support.v7.widget.AppCompatButton) findViewById( R.id.btn );
+        button = (FloatingActionButton) findViewById( R.id.button );
 
 
         recyclerView = (RecyclerView) findViewById( R.id.recylcerview22 );
 
-        create.setOnClickListener( new View.OnClickListener() {
+
+        button.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 createOrder();
@@ -106,9 +110,12 @@ public class AllTransactions extends AppCompatActivity implements NavigationView
         try {
 
             alltransactions();
+            norecord.setVisibility( View.INVISIBLE);
+            recyclerView.setVisibility( View.VISIBLE );
         } catch (Exception e) {
 
-
+norecord.setVisibility( View.VISIBLE );
+recyclerView.setVisibility( View.INVISIBLE );
         }
     }
 

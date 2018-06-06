@@ -15,29 +15,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-
-
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn"
-            android:layout_width="match_parent"
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/createtrans"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="58dp"
-            android:layout_marginRight="58dp"
-            android:layout_marginBottom="50dp"
+            android:src="@drawable/rightarrow"
             app:backgroundTint="@color/skyBlue"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="245dp"
             />
+
+
+        <TextView
+            android:id="@+id/norecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:text="No records available"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/recylcerview22"
+            android:layout_marginTop="10dp"
             android:background="#d3d3d3"
-            android:layout_below="@+id/btn">
+            android:layout_marginBottom="70dp">
 
         </android.support.v7.widget.RecyclerView>
 
